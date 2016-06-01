@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+['Beleza', 'Saúde', 'Publicidade', 'Design', 'Tecnologia'].each do |market|
+  Market.create(name: market)
+end
