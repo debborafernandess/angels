@@ -1,7 +1,7 @@
-== README
+== FIND A ANGEL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This tool helps a Startup to find the best Angel Investor to yourself.
+
 
 Things you may want to cover:
 
