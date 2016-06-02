@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :markets, only: [:show, :index]
+  resources :projects, only: [:new, :create]
 
   # Example resource route with options:
   #   resources :products do
