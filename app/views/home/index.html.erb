@@ -10,3 +10,9 @@
   <p>Lorem Ipsum dolor amet</p>
   <%= link_to 'Mais', markets_path %>
 </div>
+
+<div>
+  <% @markets.each do |markets| %>
+  <%= markets.name %>
+  <% end %>
+</div>

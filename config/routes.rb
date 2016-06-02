@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :markets, only: [:show]
-
+  resources :markets, only: [:show, :index]
 
   # Example resource route with options:
   #   resources :products do
