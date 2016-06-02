@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   root 'home#index'
 
-  resources :markets, only: [:show]
+  devise_for :users
+
+  resources :markets, only: [:index, :show]
 
 
   # Example resource route with options:
