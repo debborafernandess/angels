@@ -1,2 +1,3 @@
 <h1><%= @market.name %></h1>
 <%= render partial: 'projects/project', collection: @market.projects %>
+<%= link_to 'Criar Grupo', new_group_path %>

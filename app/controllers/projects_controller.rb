@@ -4,8 +4,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(params.require(:project).permit(:name, market_ids: []))
+    @project = Project.create(project_params)
 
     redirect_to market_path(@project.markets.first)
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name, market_ids: [])
   end
 end

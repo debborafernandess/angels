@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :markets, only: [:show, :index]
   resources :projects, only: [:new, :create]
-
+  resources :groups, only: [:new, :create, :show]
   # Example resource route with options:
   #   resources :products do
   #     member do

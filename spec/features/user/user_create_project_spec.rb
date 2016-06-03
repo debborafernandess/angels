@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user create project' do
   scenario 'successfully' do
     market = create(:market)
-name = 'bosta'
+    name = 'bosta'
     visit new_project_path
 
     fill_in 'project_name', with: name
