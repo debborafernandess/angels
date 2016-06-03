@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'devise'
 # gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -33,6 +34,8 @@ group :development, :test do
   gem 'faker'
   gem 'simplecov', require: false
   gem 'rubocop', require: false
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :development do

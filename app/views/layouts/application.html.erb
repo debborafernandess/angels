@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar">
+  <% if investor_signed_in? %>
+    <span> Olá <%= current_investor.name %></span>
+  <% end %>
+  <%=  link_to 'Sou Investidor', new_investor_registration_path %>
+  </nav>
 
   <%= yield %>
 
