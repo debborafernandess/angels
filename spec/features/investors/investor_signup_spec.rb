@@ -1,7 +1,6 @@
 require 'rails_helper'
 feature 'Investors Signup' do
   scenario 'successfully' do
-
     visit root_path
 
     click_on 'Sou Investidor'
@@ -10,7 +9,7 @@ feature 'Investors Signup' do
     fill_in 'Nome',                     with: 'Bruno'
     fill_in 'Email',                    with: 'mail@mail.com'
     fill_in 'Senha',                    with: 'banana', match: :prefer_exact
-    fill_in 'Confirmar Senha',           with: 'banana'
+    fill_in 'Confirmar Senha', with: 'banana'
     fill_in 'Bio',                      with: 'Meu Nome é Bruno'
     fill_in 'Minimo de Investimento',   with: 100
     fill_in 'Maximo de Investimento',   with: 2.000
@@ -21,6 +20,5 @@ feature 'Investors Signup' do
     within('.navbar') do
       expect(page).to have_content 'Bruno'
     end
-
   end
 end

@@ -1,3 +1,6 @@
 <h1><%= @group.name %></h1>
 <p><%= @group.description %></p>
 <p><%= @group.market.name %></p>
+<% @group.investors.each do |investor| %>
+  <p><%= investor.name %></p>
+<% end %>
