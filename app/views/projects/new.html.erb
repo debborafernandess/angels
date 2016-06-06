@@ -1,0 +1,5 @@
+  <%= simple_form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.association :markets, as: :check_boxes, label: 'Segmentos', class: 'form-control' %>
+  <%= f.submit 'Cadastrar Projeto' %>
+<% end %>

@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603005908) do
+ActiveRecord::Schema.define(version: 20160606224240) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "market_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "groups", ["market_id"], name: "index_groups_on_market_id"
+
+  create_table "groups_investors", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "investor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "groups_investors", ["group_id"], name: "index_groups_investors_on_group_id"
+  add_index "groups_investors", ["investor_id"], name: "index_groups_investors_on_investor_id"
 
   create_table "investors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

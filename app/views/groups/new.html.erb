@@ -1,0 +1,7 @@
+<%= simple_form_for @group, class: 'form-horizontal' do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.input :description, as: :text, label: 'Descrição' %>
+  <%= f.association :investors, as: :check_boxes, label: 'Investidores' %>
+  <%= f.association :market, as: :select, label: 'Segmento' %>
+  <%= f.submit 'Cadastrar Grupo' %>
+<% end %>
