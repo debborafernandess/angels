@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   resources :markets, only: [:show, :index]
   resources :projects, only: [:new, :create]
-  resources :groups, only: [:new, :create, :show]
+  resources :groups, only: [:new, :create, :show] do
+    get :join, on: :member
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
