@@ -20,6 +20,7 @@ feature 'Investors Signup' do
     expect(current_path).to eq(root_path)
     within('.navbar') do
       expect(page).to have_content 'Bruno'
+      expect(page).not_to have_content 'Sou Investidor'
     end
 
   end
