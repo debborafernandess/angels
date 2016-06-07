@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :entrepreneurs
   devise_for :investors
+  
   root 'home#index'
 
   resources :markets, only: [:show, :index]
