@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :investors
-  root 'home#index'
+  root 'markets#index'
 
   resources :markets, only: [:show, :index]
   resources :projects, only: [:new, :create]
