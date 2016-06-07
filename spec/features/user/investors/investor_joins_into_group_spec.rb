@@ -8,7 +8,7 @@ feature 'Inverstor joins into group' do
 
     visit group_path(group)
 
-    expect{ click_on 'Inscrever-se' }.to change{ GroupsInvestor.count}.by(1)
+    expect { click_on 'Inscrever-se' }.to change { GroupsInvestor.count }.by(1)
   end
 
   scenario 'fail' do
@@ -20,5 +20,4 @@ feature 'Inverstor joins into group' do
     expect(page)
       .to have_content('Para fazer sua inscrição, você precisa estar logado')
   end
-
 end
