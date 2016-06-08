@@ -20,7 +20,7 @@
 
 <div id="projects">
   <% @group.projects.each do |project| %>
-  <%= project.name %>
+  <h2><%= project.name %></h2>
   <%= project.description %>
   <%= project.target %>
   <%end%>
