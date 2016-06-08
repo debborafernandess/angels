@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_investor!
   before_action :set_group, only: [:show, :join]
   def index
     @groups = Group.joins(:groups_investors)
@@ -11,12 +12,18 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @market = Market.find(params[:market_id])
+    @group = @market.groups.new
   end
 
   def create
-    @group = Group.create(params_group)
-    redirect_to @group
+    @market = Market.find(params[:market_id])
+    @group = @market.groups.new(params_group)
+    if @group.save
+      redirect_to group_path(@group)
+    else
+      render :new
+    end
   end
 
 

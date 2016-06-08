@@ -7,6 +7,7 @@ feature 'user create a group and join into' do
 
     visit market_path(market)
     login_as(investors.first, scope: :investor)
+
     click_on 'Criar Grupo'
 
     fill_in 'group_name',         with: 'Bootcampers'

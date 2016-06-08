@@ -9,7 +9,7 @@
 <% end %>
 
 
-<%= simple_form_for [@group, @project] do |f| %>
+<%= simple_form_for [@market, @group, @project] do |f| %>
   <%= f.input :name, label: 'Nome' %>
   <%= f.input :description, label: 'Descrição' %>
   <%= f.input :target, label: 'Publico Alvo' %>

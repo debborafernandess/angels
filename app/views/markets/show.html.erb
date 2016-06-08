@@ -2,5 +2,15 @@
  <h2><%= @groups %> </h2>
 <%= link_to 'Criar Grupo', new_group_path %>
 <% @market.groups.each do |group| %>
-  <%= link_to group.name, group %>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= link_to group.name, group %></div>
+      <ul class="list-group">
+        <% group.projects.each do |project| %>
+          <li class="list-group-item"><%= project.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>
+</div>
