@@ -5,8 +5,13 @@ class ProjectsController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-    @project = @group.projects.create(project_params)
-    redirect_to @project.group
+    @project = @group.projects.new(project_params)
+    if @project.save
+      redirect_to @project.group
+    else
+      flash[:alert] = 'Campos obrigatórios não preenchidos'
+      render 'groups/show'
+    end
   end
 
   private

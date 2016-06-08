@@ -11,6 +11,6 @@ class MarketsController < ApplicationController
 
   def market_params
     params.require(:market)
-          .permit(:name, :projects)
+          .permit(:name)
   end
 end

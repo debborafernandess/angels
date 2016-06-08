@@ -25,23 +25,19 @@ feature 'Entrepreneur submit project' do
     end
   end
 
-  scenario 'Entrepreneur view many projects' do
+  scenario 'without required fields' do
 
     market = create(:market)
     group = create(:group, market: market)
-    projects = create_list(:project, 10, group: group)
+    project = build(:project)
 
     visit root_path
 
     click_on market.name
     click_on group.name
 
-    expect(page).to have_css('h1', text: group.name)
+    click_on 'Cadastrar Projeto'
 
-    projects.each do |project|
-      expect(page).to have_css('h2', text: project.name)
-      expect(page).to have_content(project.description)
-      expect(page).to have_content(project.target)
-    end
+    expect(page).to have_content 'Campos obrigatórios não preenchidos'
   end
 end

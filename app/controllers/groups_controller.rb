@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :join]
 
+  def index
+    @groups = Group.all
+  end
+
   def new
     @group = Group.new
   end
