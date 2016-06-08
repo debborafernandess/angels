@@ -39,6 +39,11 @@
   text-decoration: none;
 }
 
+.panel-heading a, .panel-heading a:hover, .panel-heading a:visited{
+  color: #FFF;
+  text-decoration: none;
+}
+
 .beleza      { background-color: #a22d7f; border: 1px solid #000; }
 .beleza:hover, .beleza:focus { background-color: #B94396; }
 
@@ -53,4 +58,3 @@
 
 .tecnologia  { background-color: #13A8FB; border: 1px solid #000; }
 .tecnologia:hover, .tecnologia:focus { background-color: #48BEFF; }
-
