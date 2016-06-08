@@ -4,3 +4,20 @@
 <% @group.investors.each do |investor| %>
   <p><%= investor.name %></p>
 <% end %>
+
+<%= simple_form_for [@group, @project] do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.input :description, label: 'Descrição' %>
+  <%= f.input :target, label: 'Publico Alvo' %>
+  <%= f.input :partner, label: 'Parceiros' %>
+  <%= f.submit 'Cadastrar Projeto' %>
+<% end %>
+
+
+<div id="projects">
+  <% @group.projects.each do |project| %>
+  <%= project.name %>
+  <%= project.description %>
+  <%= project.target %>
+  <%end%>
+</div>

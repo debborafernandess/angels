@@ -9,5 +9,8 @@ FactoryGirl.define do
     main_resources Faker::Lorem.paragraph
     communication Faker::Lorem.paragraph
     relationship Faker::Lorem.paragraph
+    name Faker::Name.name
+    description Faker::Lorem.paragraph
+    partner Faker::Lorem.word
   end
 end

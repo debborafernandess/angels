@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @project = @group.projects.build
   end
 
   private

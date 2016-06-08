@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :markets, only: [:show, :index]
-  resources :projects, only: [:new, :create]
-  resources :groups, only: [:new, :create, :show]
+  resources :groups, only: [:new, :create, :show] do
+    resources :projects, only: [:create]
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do

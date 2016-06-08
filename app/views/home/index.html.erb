@@ -13,6 +13,6 @@
 
 <div>
   <% @markets.each do |market| %>
-    <%= market.name %>
+    <%= link_to market.name, market %>
   <% end %>
 </div>
