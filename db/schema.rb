@@ -13,6 +13,27 @@
 
 ActiveRecord::Schema.define(version: 20160607233137) do
 
+  create_table "entrepreneurs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email",                  default: "", null: false
+    t.string   "telephone"
+    t.text     "bio"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "entrepreneurs", ["email"], name: "index_entrepreneurs_on_email", unique: true
+  add_index "entrepreneurs", ["reset_password_token"], name: "index_entrepreneurs_on_reset_password_token", unique: true
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.text     "description"

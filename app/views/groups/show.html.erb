@@ -1,9 +1,13 @@
 <h1><%= @group.name %></h1>
+
 <p><%= @group.description %></p>
-<p><%= @group.market.name %></p>
-<% @group.investors.each do |investor| %>
-  <p><%= investor.name %></p>
+<p><%= @group.market.name if @group.market %></p>
+<% if @group.investors %>
+  <% @group.investors.each do |investor| %>
+    <p><%= investor.name %></p>
+  <% end %>
 <% end %>
+
 
 <%= simple_form_for [@group, @project] do |f| %>
   <%= f.input :name, label: 'Nome' %>
@@ -21,3 +25,6 @@
   <%= project.target %>
   <%end%>
 </div>
+
+<%= flash[:notice] %>
+<%= link_to 'Inscrever-se', join_group_path(@group) %>

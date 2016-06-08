@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :entrepreneurs
   devise_for :investors
-  root 'home#index'
+
+  root 'markets#index'
 
   resources :markets, only: [:show, :index]
   resources :groups, only: [:new, :create, :show] do
     resources :projects, only: [:create]
+    get :join, on: :member
   end
   # Example resource route with options:
   #   resources :products do

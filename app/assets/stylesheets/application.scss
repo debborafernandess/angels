@@ -15,3 +15,42 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.placeholders {
+  margin: 12px auto;
+  text-align: center;
+}
+
+.placeholder {
+  background: #000;
+  border-radius: 50%;
+  border: 5px solid #666;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+}
+
+.placeholder h1, .placeholder a, .placeholder a:hover, .placeholder a:visited{
+  color: #FFF;
+  font-size: 34px;
+  padding-top: 59px;
+  text-decoration: none;
+}
+
+.beleza      { background-color: #a22d7f; border: 1px solid #000; }
+.beleza:hover, .beleza:focus { background-color: #B94396; }
+
+.saúde       { background-color: #1584C5; border: 1px solid #000; }
+.saúde:hover, .saúde:focus { background-color: #2494D6; }
+
+.publicidade { background-color: #03AB34; border: 1px solid #000; }
+.publicidade:hover, .publicidade:focus { background-color: #05B939; }
+
+.design      { background-color: #C1040F; border: 1px solid #000; }
+.design:hover, .design:focus { background-color: #D40410; }
+
+.tecnologia  { background-color: #13A8FB; border: 1px solid #000; }
+.tecnologia:hover, .tecnologia:focus { background-color: #48BEFF; }
+

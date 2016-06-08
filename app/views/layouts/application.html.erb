@@ -10,37 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<%= root_path %>">Angels</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-          <div class="navbar-right">
-            <% if investor_signed_in? %>
-            <span>Olá <%= current_investor.name %></span>
-            <%=  link_to 'Sair', destroy_investor_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
-            <% else %>
-              <%=  link_to 'Sou Investidor', new_investor_registration_path, class: "btn btn-default navbar-btn" %>
-            <% end %>
-
-          </div>
-        </div>
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-
+    <%= render partial: 'layouts/navbar' %>
     <div class="container">
+
+      <%= notice %>
+      <%= alert %>
       <%= yield %>
     </div>
-
   </body>
 </html>

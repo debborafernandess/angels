@@ -36,6 +36,6 @@ feature 'Investor visit home page and signin' do
     click_on 'Entrar'
     click_on 'Sair'
 
-      expect(page).to have_content 'Sou Investidor'
+    expect(page).to have_content 'Sou Investidor'
   end
 end

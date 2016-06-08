@@ -1,1 +1,7 @@
-<h1><%= f.submit @market.name %></h1>
+<div class="row placeholders">
+  <% @markets.each do |market| %>
+  <div class="col-xs-6 col-sm-3 placeholder <%= market.name.downcase %>">
+   <h1><%= link_to market.name, market %></h1>
+  </div>
+  <% end %>
+</div>

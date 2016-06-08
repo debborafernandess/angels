@@ -7,12 +7,11 @@
     <%= f.input :name, label: 'Nome', required: true, autofocus: true %>
     <%= f.input :nickname, label: 'Apelido', required: true %>
     <%= f.input :email, label: 'Email', required: true %>
-    <%= f.input :bio %>
+    <%= f.input :bio, as: :text, label: 'Bio', required: true %>
     <%= f.input :min_investment, label: 'Minimo de Investimento' %>
     <%= f.input :max_investment, label: 'Maximo de Investimento' %>
-    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label: 'Confirmar Senha', required: true %>
-
   </div>
 
   <div class="form-actions">
