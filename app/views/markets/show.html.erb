@@ -1,16 +1,38 @@
-<h1><%= @market.name %></h1>
- <h2><%= @groups %> </h2>
-<%= link_to 'Criar Grupo', new_group_path %>
-<% @market.groups.each do |group| %>
-  <div class="col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading"><%= link_to group.name, group %></div>
-      <ul class="list-group">
-        <% group.projects.each do |project| %>
-          <li class="list-group-item"><%= project.name %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="col-md-12">
+  <h1><%= @market.name %></h1>
+  <blockquote>
+    <%= link_to 'Novo Grupo', new_market_group_path(@market), class: "link-right" %>
+    <footer><strong><%= @market.name %></strong>. Ótimo segmento para investir, melhor ainda para obter projetos inovadores!</footer>
+  </blockquote>
+</div>
+
+<div class="col-md-12">
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% if @market.groups.blank? %>
+      <p>Seja o 1º a criar um grupo nesse segmento!</p>
+    <% else %>
+      <% @market.groups.each do |group| %>
+        <div class="col-md-4">
+          <div class="panel panel-primary" id='group_<%= group.id %>'>
+            <div class="panel-heading">
+              <%= link_to group.name, group %>
+              <%= link_to group.projects.count, group, class: "badge" %>
+            </div>
+            <ul class="list-group">
+              <% if group.projects.blank? %>
+                <li class="list-group-item"><%= link_to 'Seja o 1º a enviar um projeto para esse grupo!', group %></li>
+              <% else %>
+                <% group.projects.each do |project| %>
+                  <li class="list-group-item"><%= project.name %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-<% end %>
 </div>
