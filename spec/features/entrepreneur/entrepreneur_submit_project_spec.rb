@@ -1,12 +1,13 @@
 require 'rails_helper'
 feature 'Entrepreneur submit project' do
   scenario 'Successfully' do
-
+    entrepreneur = create(:entrepreneur)
     market = create(:market)
     group = create(:group, market: market)
     project = build(:project)
 
     visit root_path
+    login_as(entrepreneur, scope: :entrepreneur)
 
     click_on market.name
     click_on group.name
@@ -26,12 +27,13 @@ feature 'Entrepreneur submit project' do
   end
 
   scenario 'without required fields' do
-
+    entrepreneur = create(:entrepreneur)
     market = create(:market)
     group = create(:group, market: market)
     project = build(:project)
 
     visit root_path
+    login_as(entrepreneur, scope: :entrepreneur)
 
     click_on market.name
     click_on group.name

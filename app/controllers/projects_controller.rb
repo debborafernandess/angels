@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @group = Group.find(params[:group_id])
     @project = @group.projects.new(project_params)
     if @project.save
-      redirect_to @project.group
+      redirect_to group_path(@project.group)
     else
       flash[:alert] = 'Campos obrigatórios não preenchidos'
       render 'groups/show'

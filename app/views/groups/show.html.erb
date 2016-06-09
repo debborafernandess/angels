@@ -1,30 +1,51 @@
-<h1><%= @group.name %></h1>
-
-<p><%= @group.description %></p>
-<p><%= @group.market.name if @group.market %></p>
-<% if @group.investors %>
-  <% @group.investors.each do |investor| %>
-    <p><%= investor.name %></p>
-  <% end %>
-<% end %>
-
-
-<%= simple_form_for [@market, @group, @project] do |f| %>
-  <%= f.input :name, label: 'Nome' %>
-  <%= f.input :description, label: 'Descrição' %>
-  <%= f.input :target, label: 'Publico Alvo' %>
-  <%= f.input :partner, label: 'Parceiros' %>
-  <%= f.submit 'Cadastrar Projeto' %>
-<% end %>
-
-
-<div id="projects">
-  <% @group.projects.each do |project| %>
-  <h2><%= project.name %></h2>
-  <%= project.description %>
-  <%= project.target %>
-  <%end%>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @group.name %></h1>
+    <blockquote>
+      <%= link_to 'Inscrever-se', join_group_path(@group), class: "link-right" %>
+      <footer><%= @group.description %></footer>
+      <footer>
+        <strong>Investidores: </strong>
+        <%= investors_name(@group) if @group.investors %>
+      <p></p>
+      <p><%= link_to "Veja outros grupos em #{@group.market.name}", @group.market %></p>
+      </footer>
+    </blockquote>
+  </div>
 </div>
 
+<% unless @group.projects.blank? %>
+  <hr />
+  <div id="projects" class='row'>
+    <h3>Projetos</h3>
 
-<%= link_to 'Inscrever-se', join_group_path(@group) %>
+    <% @group.projects.each do |project| %>
+      <div class="col-md-6">
+        <dl class="dl-horizontal">
+          <dt><%= project.name %><dt>
+          <dd><%= project.description %></dd>
+          <dt>Público alvo<dt>
+          <dd><%= project.target %></dd>
+          <dt>Parceiros<dt>
+          <dd><%= project.partner %></dd>
+        </dl>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <h3>Envie seu projeto! </h3>
+      <%= simple_form_for [@group, @project] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, label: 'Nome' %>
+        <%= f.input :target, label: 'Público Alvo' %>
+        <%= f.input :partner, label: 'Parceiros' %>
+        <%= f.input :description, label: 'Descrição' %>
+        <%= f.submit 'Cadastrar Projeto', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

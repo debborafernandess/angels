@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_investor!
+  before_action :authenticate_investor!, except: [:show]
   before_action :set_group, only: [:show, :join]
 
   def index
@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
     @market = Market.find(params[:market_id])
     @group = @market.groups.new(params_group)
     if @group.save
-      redirect_to group_path(@group)
+      redirect_to market_path(@market)
     else
       render :new
     end
