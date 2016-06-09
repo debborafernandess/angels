@@ -1,11 +1,10 @@
 require 'rails_helper'
 feature 'user view my groups' do
   scenario 'successfully' do
-
     investor = create(:investor)
-    market = create(:market)
-    group = create(:group, market: market, investors: [investor])
-    group2 = create(:group, market: market, name: 'banana')
+    market   = create(:market)
+    group    = create(:group, market: market, investors: [investor])
+    group2   = create(:group, market: market, name: 'banana')
     login_as(investor, scope: :investor)
 
     visit root_path

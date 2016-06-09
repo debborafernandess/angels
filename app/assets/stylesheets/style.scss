@@ -1,10 +1,5 @@
 html, body { height: 100%; }
 
-.placeholders {
-  margin: 12px auto;
-  text-align: center;
-}
-
 .banner {
   background: url(image-path('cover.jpg'));
   background-size: cover;
@@ -13,25 +8,13 @@ html, body { height: 100%; }
   margin-top: -20px;
 }
 
-.placeholder {
-  background: #000;
-  border-radius: 50%;
-  border: 5px solid #666;
-  height: 200px;
-  margin: 20px;
-  overflow: hidden;
-  text-align: center;
-  width: 200px;
-}
-
-.placeholder h1, .placeholder a, .placeholder a:hover, .placeholder a:visited{
+.nav, .nav a, .nav a:hover, .nav a:visited{
   color: #FFF;
-  font-size: 34px;
-  padding-top: 59px;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.panel-heading a, .panel-heading a:hover, .panel-heading a:visited{
+.panel-heading, .panel-heading a, .panel-heading a:hover, .panel-heading a:visited{
   color: #FFF;
   text-decoration: none;
   font-weight: bold;
@@ -40,6 +23,7 @@ html, body { height: 100%; }
 .badge { float: right; }
 .link-right { float: right; }
 
+.lead { 	text-align: justify; }
 .beleza      { background-color: #a22d7f; border: 1px solid #000; }
 .beleza:hover, .beleza:focus { background-color: #B94396; }
 .back_beleza  { background-color: rgb(170, 89, 112); }
@@ -57,18 +41,11 @@ html, body { height: 100%; }
 .tecnologia:hover, .tecnologia:focus { background-color: #48BEFF; }
 
 .fixed_bottom {
-  position: absolute;
-  margin-top: 5px;
-  bottom: 0;
-  width: 100%;
-}
-
-.fixed_bottom {
-   position:fixed;
-   padding: 10px 0;
-   left:0px;
-   bottom:0px;
-   height:35px;
-   width:100%;
-   background: rgba(0,0,0,0.9);
+  position:fixed;
+  padding: 10px 0;
+  left:0px;
+  bottom:0px;
+  height:35px;
+  width:100%;
+  background: rgba(0,0,0,0.9);
 }

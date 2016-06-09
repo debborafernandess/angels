@@ -15,7 +15,7 @@ feature 'Inverstor joins into group' do
     group = create(:group)
     visit group_path(group)
 
-    click_on 'Inscrever-se'
+    click_on 'Fazer parte'
 
     expect(page)
       .to have_content('You need to sign in or sign up before continuing')

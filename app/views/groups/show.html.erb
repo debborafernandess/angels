@@ -3,19 +3,19 @@
   <div class="col-md-12">
     <h1><%= @group.name %></h1>
     <blockquote>
-      <%= link_to 'Inscrever-se', join_group_path(@group), class: "link-right" %>
+      <%= link_to 'Fazer parte', join_group_path(@group), class: "link-right" %>
       <footer><%= @group.description %></footer>
       <footer>
         <strong>Investidores: </strong>
         <%= investors_name(@group) if @group.investors %>
       <p></p>
-      <p><%= link_to "Veja outros grupos em #{@group.market.name}", @group.market %></p>
+      <p><%= link_to "Outros grupos em #{@group.market.name}", @group.market, class: "link-right" %></p>
       </footer>
     </blockquote>
   </div>
 </div>
 
-<% unless @group.projects.blank? %>
+<% unless @group.projects.count.zero? %>
   <hr />
   <div id="projects" class='row'>
     <h3>Projetos</h3>

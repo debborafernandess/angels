@@ -17,12 +17,12 @@
             <% if investor_signed_in? %>
               <div class="investor-nav">
                 <li>Olá <%= current_investor.name %></li>
-                <li><%=  link_to 'Sair', destroy_investor_session_path, method: :delete, class: "btn btn-default navbar-btn" %></li>
+                <li><%=  link_to 'Sair', destroy_investor_session_path, method: :delete %></li>
               </div>
             <% elsif entrepreneur_signed_in? %>
               <div class="entrepreneur-nav">
                 <li>Olá <%= current_entrepreneur.name %></li>
-                <li><%= link_to 'Sair', destroy_entrepreneur_session_path, method: :delete, class: "btn btn-default navbar-btn" %></li>
+                <li><%= link_to 'Sair', destroy_entrepreneur_session_path, method: :delete %></li>
               </div>
             <% else %>
               <li><%=  link_to 'Investidor', new_investor_session_path %></li>
