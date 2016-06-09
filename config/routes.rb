@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'markets#index'
 
   resources :markets, only: [:show, :index]
-  resources :groups, only: [:new, :create, :show] do
+  resources :groups, only: [:new, :create, :show, :index] do
     resources :projects, only: [:create]
     get :join, on: :member
   end

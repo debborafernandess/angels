@@ -1,5 +1,10 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :join]
+  def index
+    @groups = Group.joins(:groups_investors)
+                   .where(groups_investors:
+                          { investor_id: current_investor.id })
+  end
 
   def new
     @group = Group.new
