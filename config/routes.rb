@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :entrepreneurs
   devise_for :investors
 
-  root 'home#index'
+  root 'markets#index'
 
   resources :markets, only: [:show, :index] do
     resources :groups, only: [:new, :create]

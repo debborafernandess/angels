@@ -1,3 +1,5 @@
+html, body { height: 100%; }
+
 .placeholders {
   margin: 12px auto;
   text-align: center;
@@ -53,3 +55,20 @@
 
 .tecnologia  { background-color: #13A8FB; border: 1px solid #000; }
 .tecnologia:hover, .tecnologia:focus { background-color: #48BEFF; }
+
+.fixed_bottom {
+  position: absolute;
+  margin-top: 5px;
+  bottom: 0;
+  width: 100%;
+}
+
+.fixed_bottom {
+   position:fixed;
+   padding: 10px 0;
+   left:0px;
+   bottom:0px;
+   height:35px;
+   width:100%;
+   background: rgba(0,0,0,0.9);
+}

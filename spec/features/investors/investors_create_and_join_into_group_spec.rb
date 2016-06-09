@@ -7,7 +7,8 @@ feature 'user create a group and join into' do
 
     visit market_path(market)
     login_as(investors.first, scope: :investor)
-    click_on 'Criar Grupo'
+
+    click_on 'Novo Grupo'
 
     fill_in 'group_name',         with: 'Bootcampers'
     fill_in 'group_description',  with: 'Lorem ipsum'
@@ -16,18 +17,14 @@ feature 'user create a group and join into' do
 
     click_on 'Cadastrar'
 
-    expect(page).to have_css('h1', text: 'Bootcampers')
-    expect(page).to have_css('p', text: 'Lorem ipsum')
-    expect(page).to have_css('p', text: investors.first.name)
-    expect(page).to have_css('p', text: investors.last.name)
-    expect(page).to have_css('p', text: market.name)
+    expect(page).to have_link('Bootcampers')
   end
 
   scenario 'fail unless authenticated' do
     market = create(:market)
     visit market_path(market)
 
-    click_on 'Criar Grupo'
+    click_on 'Novo Grupo'
 
     expect(current_path).to eq new_investor_session_path
   end
@@ -38,12 +35,13 @@ feature 'user create a group and join into' do
     investor = create(:investor)
     login_as(investor, scope: :investor)
 
-    click_on 'Criar Grupo'
+    click_on 'Novo Grupo'
 
     click_on 'Cadastrar'
 
     within('.group_name') { expect(page).to have_content 'can\'t be blank' }
-    within('.group_description') { expect(page).to have_content 'can\'t be blank' }
+    within('.group_description') do
+        expect(page).to have_content 'can\'t be blank'
+    end
   end
-
 end

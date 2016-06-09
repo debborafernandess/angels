@@ -1,20 +1,26 @@
-<h2>Sou Empreendedor</h2>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <h2>Sou Empreendedor</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, label: 'Nome', required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :telephone, label: 'Telefone', required: true %>
-    <%= f.input :bio, required: true  %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+        <div class="form-inputs">
+          <%= f.input :name, label: 'Nome', required: true, autofocus: true %>
+          <%= f.input :email, required: true %>
+          <%= f.input :telephone, label: 'Telefone', required: true %>
+          <%= f.input :bio, required: true  %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Cadastrar", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      <br />
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar" %>
-  </div>
-<% end %>
-
-<%= link_to "Sou Cadastrado", new_session_path(resource_name) %><br />
+</div>

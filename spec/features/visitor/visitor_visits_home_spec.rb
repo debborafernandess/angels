@@ -7,15 +7,13 @@ feature 'Visitor access home page and view markets' do
     visit root_path
 
     expect(page).to have_content('Angels')
-    expect(page).to have_link('Sou Investidor', href: new_investor_session_path)
+    expect(page).to have_link('Investidor', href: new_investor_session_path)
     expect(page)
-      .to have_link('Sou Empreendedor',
-                     href: new_entrepreneur_session_path)
+      .to have_link('Empreendedor',
+                    href: new_entrepreneur_session_path)
 
-    within('.placeholders') do
-      markets.each do |market|
-        expect(page).to have_content(market.name)
-      end
+    markets.each do |market|
+      expect(page).to have_content(market.name)
     end
   end
 end

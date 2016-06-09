@@ -3,7 +3,8 @@ feature 'Investors Signup' do
   scenario 'successfully' do
     visit root_path
 
-    click_on 'Sou Investidor'
+    click_on 'Investidor'
+    click_on 'Sign up'
 
     fill_in 'Apelido',                  with: 'Zardini'
     fill_in 'Nome',                     with: 'Bruno'
@@ -19,7 +20,7 @@ feature 'Investors Signup' do
     expect(current_path).to eq(root_path)
     within('.navbar') do
       expect(page).to have_content 'Bruno'
-      expect(page).not_to have_content 'Sou Investidor'
+      expect(page).not_to have_content 'Investidor'
     end
   end
 end

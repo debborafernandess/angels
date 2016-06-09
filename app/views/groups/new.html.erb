@@ -1,7 +1,14 @@
-<%= simple_form_for [@market, @group], class: 'form-horizontal' do |f| %>
-  <%= f.input :name, label: 'Nome' %>
-  <%= f.input :description, as: :text, label: 'Descrição' %>
-  <%= f.association :investors, as: :check_boxes, label: 'Investidores' %>
-  <%= f.association :market, as: :select, label: 'Segmento' %>
-  <%= f.submit 'Cadastrar Grupo' %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <h1> Novo grupo de investidores</h1>
+      <%= simple_form_for [@market, @group], class: 'form-horizontal' do |f| %>
+        <%= f.input :name, label: 'Nome' %>
+        <%= f.input :description, as: :text, label: 'Descrição' %>
+        <%= f.association :investors, as: :check_boxes, label: 'Investidores' %>
+        <%= f.association :market, as: :select, label: 'Segmento' %>
+        <%= f.submit 'Cadastrar Grupo', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

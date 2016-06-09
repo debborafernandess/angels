@@ -18,6 +18,6 @@ feature 'Inverstor joins into group' do
     click_on 'Inscrever-se'
 
     expect(page)
-      .to have_content('Para fazer sua inscrição, você precisa estar logado')
+      .to have_content('You need to sign in or sign up before continuing')
   end
 end

@@ -26,7 +26,6 @@ class GroupsController < ApplicationController
     end
   end
 
-
   def show
     @group = Group.find(params[:id])
     @project = @group.projects.build

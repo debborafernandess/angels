@@ -1,0 +1,20 @@
+<hr class="featurette-divider">
+<div class="row featurette">
+  <% if market.id.odd? %>
+    <div class="col-md-7">
+      <h2 class="featurette-heading"><%= link_to market.name, market %>. <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <%= link_to(image_tag("#{market.name.downcase}.png", size: '300x300', border: 0, alt: '300x300', 'data-holder-rendered': true), market) %>
+    </div>
+  <% else %>
+    <div class="col-md-5">
+      <%= link_to(image_tag("#{market.name.downcase}.png", size: '300x300', border: 0, alt: '300x300', 'data-holder-rendered': true), market) %>
+    </div>
+    <div class="col-md-7">
+      <h2 class="featurette-heading"><%= link_to market.name, market %>. <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+  <% end %>
+</div>
